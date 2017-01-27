@@ -1,0 +1,6 @@
+framework module Pods_LocalHandsMobile {
+  umbrella header "Pods-LocalHandsMobile-umbrella.h"
+
+  export *
+  module * { export * }
+}

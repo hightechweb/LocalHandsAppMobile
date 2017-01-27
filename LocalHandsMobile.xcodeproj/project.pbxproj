@@ -7,21 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65462F391E3AE2DF0074ECCF /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65462F381E3AE2DF0074ECCF /* PaymentViewController.swift */; };
+		65462F3B1E3AF25E0074ECCF /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65462F3A1E3AF25E0074ECCF /* OrderViewController.swift */; };
+		6584F06B1E3ABA3D00D77837 /* TaskDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6584F06A1E3ABA3D00D77837 /* TaskDetailsViewController.swift */; };
+		6584F06D1E3AD42E00D77837 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6584F06C1E3AD42E00D77837 /* TaskViewController.swift */; };
+		6584F0701E3AD52400D77837 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6584F06F1E3AD52400D77837 /* MapKit.framework */; };
+		65B77C201E3B12B2009786E3 /* FBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B77C1F1E3B12B2009786E3 /* FBManager.swift */; };
+		65B77C221E3B1536009786E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B77C211E3B1536009786E3 /* LoginViewController.swift */; };
+		65B77C241E3B1DF5009786E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B77C231E3B1DF5009786E3 /* User.swift */; };
+		65B77C2A1E3B3083009786E3 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B77C291E3B3083009786E3 /* APIManager.swift */; };
+		65B77C2C1E3B3235009786E3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B77C2B1E3B3235009786E3 /* Constants.swift */; };
 		65BD26F41E3569C3008FDB98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD26F31E3569C3008FDB98 /* AppDelegate.swift */; };
-		65BD26F61E3569C3008FDB98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD26F51E3569C3008FDB98 /* ViewController.swift */; };
 		65BD26F91E3569C3008FDB98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65BD26F71E3569C3008FDB98 /* Main.storyboard */; };
 		65BD26FB1E3569C3008FDB98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65BD26FA1E3569C3008FDB98 /* Assets.xcassets */; };
 		65BD26FE1E3569C3008FDB98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65BD26FC1E3569C3008FDB98 /* LaunchScreen.storyboard */; };
+		65BD27081E357A46008FDB98 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD27071E357A46008FDB98 /* SWRevealViewController.m */; };
+		65BD270B1E35890B008FDB98 /* ScooperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD270A1E35890B008FDB98 /* ScooperViewController.swift */; };
+		65BD270D1E358CC5008FDB98 /* CustomerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD270C1E358CC5008FDB98 /* CustomerMenuViewController.swift */; };
+		65BD270F1E359463008FDB98 /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD270E1E359463008FDB98 /* TaskListTableViewController.swift */; };
+		EABEC36AAEC9E2A4DA9E6360 /* Pods_LocalHandsMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6A833F64B1C67667796BB0 /* Pods_LocalHandsMobile.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		356730C1AAFDF28B9415D0A6 /* Pods-LocalHandsMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalHandsMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocalHandsMobile/Pods-LocalHandsMobile.release.xcconfig"; sourceTree = "<group>"; };
+		65462F381E3AE2DF0074ECCF /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		65462F3A1E3AF25E0074ECCF /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		6584F06A1E3ABA3D00D77837 /* TaskDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailsViewController.swift; sourceTree = "<group>"; };
+		6584F06C1E3AD42E00D77837 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		6584F06F1E3AD52400D77837 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		65B77C1E1E3B09C0009786E3 /* LocalHandsMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocalHandsMobile.entitlements; sourceTree = "<group>"; };
+		65B77C1F1E3B12B2009786E3 /* FBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBManager.swift; sourceTree = "<group>"; };
+		65B77C211E3B1536009786E3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		65B77C231E3B1DF5009786E3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		65B77C291E3B3083009786E3 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		65B77C2B1E3B3235009786E3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		65BD26F01E3569C3008FDB98 /* LocalHandsMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalHandsMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65BD26F31E3569C3008FDB98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65BD26F51E3569C3008FDB98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		65BD26F81E3569C3008FDB98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65BD26FA1E3569C3008FDB98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65BD26FD1E3569C3008FDB98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65BD26FF1E3569C3008FDB98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65BD27051E357A46008FDB98 /* LocalHandsMobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocalHandsMobile-Bridging-Header.h"; sourceTree = "<group>"; };
+		65BD27061E357A46008FDB98 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		65BD27071E357A46008FDB98 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		65BD270A1E35890B008FDB98 /* ScooperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScooperViewController.swift; sourceTree = "<group>"; };
+		65BD270C1E358CC5008FDB98 /* CustomerMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerMenuViewController.swift; sourceTree = "<group>"; };
+		65BD270E1E359463008FDB98 /* TaskListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
+		8A6A833F64B1C67667796BB0 /* Pods_LocalHandsMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocalHandsMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF0A82A03443B2A5F3CF2309 /* Pods-LocalHandsMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalHandsMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocalHandsMobile/Pods-LocalHandsMobile.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +62,70 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6584F0701E3AD52400D77837 /* MapKit.framework in Frameworks */,
+				EABEC36AAEC9E2A4DA9E6360 /* Pods_LocalHandsMobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6584F06E1E3AD52300D77837 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6584F06F1E3AD52400D77837 /* MapKit.framework */,
+				8A6A833F64B1C67667796BB0 /* Pods_LocalHandsMobile.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65B77C251E3B2FC6009786E3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				65B77C231E3B1DF5009786E3 /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		65B77C261E3B2FD2009786E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		65B77C271E3B2FD9009786E3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				65B77C211E3B1536009786E3 /* LoginViewController.swift */,
+				65BD270A1E35890B008FDB98 /* ScooperViewController.swift */,
+				65BD270C1E358CC5008FDB98 /* CustomerMenuViewController.swift */,
+				65BD270E1E359463008FDB98 /* TaskListTableViewController.swift */,
+				6584F06A1E3ABA3D00D77837 /* TaskDetailsViewController.swift */,
+				6584F06C1E3AD42E00D77837 /* TaskViewController.swift */,
+				65462F381E3AE2DF0074ECCF /* PaymentViewController.swift */,
+				65462F3A1E3AF25E0074ECCF /* OrderViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		65B77C281E3B2FE2009786E3 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				65B77C1F1E3B12B2009786E3 /* FBManager.swift */,
+				65B77C291E3B3083009786E3 /* APIManager.swift */,
+				65B77C2B1E3B3235009786E3 /* Constants.swift */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
 		65BD26E71E3569C3008FDB98 = {
 			isa = PBXGroup;
 			children = (
 				65BD26F21E3569C3008FDB98 /* LocalHandsMobile */,
 				65BD26F11E3569C3008FDB98 /* Products */,
+				6584F06E1E3AD52300D77837 /* Frameworks */,
+				B671D5A86769552AD1ABBAD9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +140,38 @@
 		65BD26F21E3569C3008FDB98 /* LocalHandsMobile */ = {
 			isa = PBXGroup;
 			children = (
+				65B77C281E3B2FE2009786E3 /* Manager */,
+				65B77C271E3B2FD9009786E3 /* Controller */,
+				65B77C261E3B2FD2009786E3 /* View */,
+				65B77C251E3B2FC6009786E3 /* Model */,
+				65B77C1E1E3B09C0009786E3 /* LocalHandsMobile.entitlements */,
+				65BD27091E357A65008FDB98 /* Lib */,
 				65BD26F31E3569C3008FDB98 /* AppDelegate.swift */,
-				65BD26F51E3569C3008FDB98 /* ViewController.swift */,
 				65BD26F71E3569C3008FDB98 /* Main.storyboard */,
 				65BD26FA1E3569C3008FDB98 /* Assets.xcassets */,
 				65BD26FC1E3569C3008FDB98 /* LaunchScreen.storyboard */,
 				65BD26FF1E3569C3008FDB98 /* Info.plist */,
 			);
 			path = LocalHandsMobile;
+			sourceTree = "<group>";
+		};
+		65BD27091E357A65008FDB98 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				65BD27061E357A46008FDB98 /* SWRevealViewController.h */,
+				65BD27071E357A46008FDB98 /* SWRevealViewController.m */,
+				65BD27051E357A46008FDB98 /* LocalHandsMobile-Bridging-Header.h */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
+		B671D5A86769552AD1ABBAD9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF0A82A03443B2A5F3CF2309 /* Pods-LocalHandsMobile.debug.xcconfig */,
+				356730C1AAFDF28B9415D0A6 /* Pods-LocalHandsMobile.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65BD27021E3569C3008FDB98 /* Build configuration list for PBXNativeTarget "LocalHandsMobile" */;
 			buildPhases = (
+				2A00D43A17690740AC86C6C9 /* [CP] Check Pods Manifest.lock */,
 				65BD26EC1E3569C3008FDB98 /* Sources */,
 				65BD26ED1E3569C3008FDB98 /* Frameworks */,
 				65BD26EE1E3569C3008FDB98 /* Resources */,
+				50ABCDA2E1D3E90212F63507 /* [CP] Embed Pods Frameworks */,
+				FA0027D413E7187EAB00768B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,7 +209,14 @@
 				TargetAttributes = {
 					65BD26EF1E3569C3008FDB98 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 63TRZM7NUV;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -131,13 +251,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A00D43A17690740AC86C6C9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		50ABCDA2E1D3E90212F63507 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LocalHandsMobile/Pods-LocalHandsMobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA0027D413E7187EAB00768B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LocalHandsMobile/Pods-LocalHandsMobile-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		65BD26EC1E3569C3008FDB98 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65BD26F61E3569C3008FDB98 /* ViewController.swift in Sources */,
+				65B77C241E3B1DF5009786E3 /* User.swift in Sources */,
+				65B77C221E3B1536009786E3 /* LoginViewController.swift in Sources */,
+				6584F06B1E3ABA3D00D77837 /* TaskDetailsViewController.swift in Sources */,
+				65B77C201E3B12B2009786E3 /* FBManager.swift in Sources */,
+				65462F3B1E3AF25E0074ECCF /* OrderViewController.swift in Sources */,
+				65BD270F1E359463008FDB98 /* TaskListTableViewController.swift in Sources */,
+				65BD270B1E35890B008FDB98 /* ScooperViewController.swift in Sources */,
+				65BD270D1E358CC5008FDB98 /* CustomerMenuViewController.swift in Sources */,
+				6584F06D1E3AD42E00D77837 /* TaskViewController.swift in Sources */,
 				65BD26F41E3569C3008FDB98 /* AppDelegate.swift in Sources */,
+				65B77C2A1E3B3083009786E3 /* APIManager.swift in Sources */,
+				65B77C2C1E3B3235009786E3 /* Constants.swift in Sources */,
+				65462F391E3AE2DF0074ECCF /* PaymentViewController.swift in Sources */,
+				65BD27081E357A46008FDB98 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,24 +438,35 @@
 		};
 		65BD27031E3569C3008FDB98 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF0A82A03443B2A5F3CF2309 /* Pods-LocalHandsMobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = LocalHandsMobile/LocalHandsMobile.entitlements;
+				DEVELOPMENT_TEAM = 63TRZM7NUV;
 				INFOPLIST_FILE = LocalHandsMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.localhands.LocalHandsMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LocalHandsMobile/LocalHandsMobile-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		65BD27041E3569C3008FDB98 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 356730C1AAFDF28B9415D0A6 /* Pods-LocalHandsMobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = LocalHandsMobile/LocalHandsMobile.entitlements;
+				DEVELOPMENT_TEAM = 63TRZM7NUV;
 				INFOPLIST_FILE = LocalHandsMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.localhands.LocalHandsMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LocalHandsMobile/LocalHandsMobile-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -299,6 +490,7 @@
 				65BD27041E3569C3008FDB98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
