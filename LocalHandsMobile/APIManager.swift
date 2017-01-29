@@ -83,4 +83,78 @@ class APIManager {
         
         
     }
+    
+    // API to refresh the token when it's expired
+    func refreshTokenIfNeed(completionHandler: @escaping () -> Void) {
+        
+        let path = "api/social/refresh-token/"
+        let url = baseURL?.appendingPathComponent(path)
+        let params: [String: Any] = [
+            "access_token": self.accessToken,
+            "refresh_token": self.refreshToken
+        ]
+        
+        if (Date() > self.expired) {
+            
+            Alamofire.request(url!, method: .post, parameters: params, encoding: URLEncoding(), headers: nil).responseJSON(completionHandler: { (response) in
+                
+                switch response.result {
+                case .success(let value):
+                    let jsonData = JSON(value)
+                    self.accessToken = jsonData["access_token"].string!
+                    self.expired = Date().addingTimeInterval(TimeInterval(jsonData["expires_in"].int!))
+                    completionHandler()
+                    break
+                
+                case .failure:
+                    break
+                }
+                
+            })
+        } else {
+            completionHandler()
+        }
+    }
+    
+    // Request server function
+    func requestServer(_ method: HTTPMethod,_ path: String,_ params: [String: Any]?,_ encoding:
+        ParameterEncoding,_ completionHandler: @escaping (JSON) -> Void ) {
+        
+        let url = baseURL?.appendingPathComponent(path)
+        
+        refreshTokenIfNeed {
+            
+            Alamofire.request(url!, method: method, parameters: params, encoding: encoding, headers: nil).responseJSON{ response in
+                
+                switch response.result {
+                case .success(let value):
+                    let jsonData = JSON(value)
+                    completionHandler(jsonData)
+                    break
+                    
+                case .failure:
+                    completionHandler(nil)
+                    break
+                }
+            }
+        }
+
+        
+    }
+    
+    // API get scooper list
+    func getScoopers(completionHandler: @escaping (JSON) -> Void) {
+        
+        let path = "api/customer/scoopers/"
+        requestServer(.get, path, nil, URLEncoding(), completionHandler)
+    }
+    
+    // API Get list of tasks offered by a scooper
+    func getTasks(scooperId: Int, completionHandler: @escaping (JSON) -> Void) {
+        
+        let path = "api/customer/tasks/\(scooperId)"
+        requestServer(.get, path, nil, URLEncoding(), completionHandler)
+    }
+    
+
 }
