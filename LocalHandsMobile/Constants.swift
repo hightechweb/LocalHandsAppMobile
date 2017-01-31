@@ -14,3 +14,5 @@ let CLIENT_SECRET: String = "Y1KlDTzjGjhzXw80yMqfPUV5SPQSESCMciJquSE5QN4YXTnN0Lq
 
 let USERTYPE_CUSTOMER = "customer"
 let USERTYPE_DRIVER = "driver"
+
+let STRIPE_PUBLIC_KEY = "pk_test_gLbiqPrcrCQ6J2y2gUd15fbf"

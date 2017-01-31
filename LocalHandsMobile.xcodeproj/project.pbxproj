@@ -11,7 +11,7 @@
 		651DB8C91E3C2DF900A8CB44 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651DB8C81E3C2DF900A8CB44 /* Task.swift */; };
 		651DB8CB1E3C2EE700A8CB44 /* TaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651DB8CA1E3C2EE700A8CB44 /* TaskViewCell.swift */; };
 		651DB8CD1E3CB4E400A8CB44 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651DB8CC1E3CB4E400A8CB44 /* Helpers.swift */; };
-		651DB8CF1E3CCBB400A8CB44 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651DB8CE1E3CCBB400A8CB44 /* File.swift */; };
+		651DB8CF1E3CCBB400A8CB44 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651DB8CE1E3CCBB400A8CB44 /* Cart.swift */; };
 		651DB8D11E3CE07B00A8CB44 /* CartViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651DB8D01E3CE07B00A8CB44 /* CartViewCell.swift */; };
 		65462F391E3AE2DF0074ECCF /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65462F381E3AE2DF0074ECCF /* PaymentViewController.swift */; };
 		65462F3B1E3AF25E0074ECCF /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65462F3A1E3AF25E0074ECCF /* OrderViewController.swift */; };
@@ -19,6 +19,7 @@
 		6584F06D1E3AD42E00D77837 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6584F06C1E3AD42E00D77837 /* TaskViewController.swift */; };
 		6584F0701E3AD52400D77837 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6584F06F1E3AD52400D77837 /* MapKit.framework */; };
 		65A2CDDF1E3BC319007A4BC6 /* Scooper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A2CDDE1E3BC319007A4BC6 /* Scooper.swift */; };
+		65AE73741E3F195400A34FEC /* OrderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AE73731E3F195400A34FEC /* OrderViewCell.swift */; };
 		65B77C201E3B12B2009786E3 /* FBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B77C1F1E3B12B2009786E3 /* FBManager.swift */; };
 		65B77C221E3B1536009786E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B77C211E3B1536009786E3 /* LoginViewController.swift */; };
 		65B77C241E3B1DF5009786E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B77C231E3B1DF5009786E3 /* User.swift */; };
@@ -30,9 +31,12 @@
 		65BD26FE1E3569C3008FDB98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65BD26FC1E3569C3008FDB98 /* LaunchScreen.storyboard */; };
 		65BD27081E357A46008FDB98 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD27071E357A46008FDB98 /* SWRevealViewController.m */; };
 		65BD270B1E35890B008FDB98 /* ScooperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD270A1E35890B008FDB98 /* ScooperViewController.swift */; };
-		65BD270D1E358CC5008FDB98 /* CustomerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD270C1E358CC5008FDB98 /* CustomerMenuViewController.swift */; };
+		65BD270D1E358CC5008FDB98 /* CustomerMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD270C1E358CC5008FDB98 /* CustomerMenuTableViewController.swift */; };
 		65BD270F1E359463008FDB98 /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD270E1E359463008FDB98 /* TaskListTableViewController.swift */; };
 		65D3D8311E3DBE7F000D6918 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D3D8301E3DBE7F000D6918 /* CoreLocation.framework */; };
+		65E10CD21E412CDE006EF0B0 /* DriverOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E10CD11E412CDE006EF0B0 /* DriverOrdersViewController.swift */; };
+		65E10CDA1E412F3D006EF0B0 /* DriverMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E10CD91E412F3D006EF0B0 /* DriverMenuViewController.swift */; };
+		65E10CDC1E4141BF006EF0B0 /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E10CDB1E4141BF006EF0B0 /* DeliveryViewController.swift */; };
 		EABEC36AAEC9E2A4DA9E6360 /* Pods_LocalHandsMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6A833F64B1C67667796BB0 /* Pods_LocalHandsMobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +46,7 @@
 		651DB8C81E3C2DF900A8CB44 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		651DB8CA1E3C2EE700A8CB44 /* TaskViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewCell.swift; sourceTree = "<group>"; };
 		651DB8CC1E3CB4E400A8CB44 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		651DB8CE1E3CCBB400A8CB44 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		651DB8CE1E3CCBB400A8CB44 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		651DB8D01E3CE07B00A8CB44 /* CartViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewCell.swift; sourceTree = "<group>"; };
 		65462F381E3AE2DF0074ECCF /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		65462F3A1E3AF25E0074ECCF /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +54,7 @@
 		6584F06C1E3AD42E00D77837 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		6584F06F1E3AD52400D77837 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		65A2CDDE1E3BC319007A4BC6 /* Scooper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scooper.swift; sourceTree = "<group>"; };
+		65AE73731E3F195400A34FEC /* OrderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewCell.swift; sourceTree = "<group>"; };
 		65B77C1E1E3B09C0009786E3 /* LocalHandsMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocalHandsMobile.entitlements; sourceTree = "<group>"; };
 		65B77C1F1E3B12B2009786E3 /* FBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBManager.swift; sourceTree = "<group>"; };
 		65B77C211E3B1536009786E3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -66,9 +71,12 @@
 		65BD27061E357A46008FDB98 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		65BD27071E357A46008FDB98 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		65BD270A1E35890B008FDB98 /* ScooperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScooperViewController.swift; sourceTree = "<group>"; };
-		65BD270C1E358CC5008FDB98 /* CustomerMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerMenuViewController.swift; sourceTree = "<group>"; };
+		65BD270C1E358CC5008FDB98 /* CustomerMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerMenuTableViewController.swift; sourceTree = "<group>"; };
 		65BD270E1E359463008FDB98 /* TaskListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
 		65D3D8301E3DBE7F000D6918 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		65E10CD11E412CDE006EF0B0 /* DriverOrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverOrdersViewController.swift; sourceTree = "<group>"; };
+		65E10CD91E412F3D006EF0B0 /* DriverMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverMenuViewController.swift; sourceTree = "<group>"; };
+		65E10CDB1E4141BF006EF0B0 /* DeliveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
 		8A6A833F64B1C67667796BB0 /* Pods_LocalHandsMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocalHandsMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0A82A03443B2A5F3CF2309 /* Pods-LocalHandsMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalHandsMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocalHandsMobile/Pods-LocalHandsMobile.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,10 +108,8 @@
 		65B77C251E3B2FC6009786E3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				65B77C231E3B1DF5009786E3 /* User.swift */,
-				65A2CDDE1E3BC319007A4BC6 /* Scooper.swift */,
-				651DB8C81E3C2DF900A8CB44 /* Task.swift */,
-				651DB8CE1E3CCBB400A8CB44 /* File.swift */,
+				65E10CD81E412ED8006EF0B0 /* Customer */,
+				65E10CD71E412ED2006EF0B0 /* Driver */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -111,9 +117,8 @@
 		65B77C261E3B2FD2009786E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				651DB8C61E3C02FB00A8CB44 /* ScooperViewCell.swift */,
-				651DB8CA1E3C2EE700A8CB44 /* TaskViewCell.swift */,
-				651DB8D01E3CE07B00A8CB44 /* CartViewCell.swift */,
+				65E10CD61E412EBF006EF0B0 /* Customer */,
+				65E10CD51E412EB5006EF0B0 /* Driver */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -121,14 +126,8 @@
 		65B77C271E3B2FD9009786E3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				65B77C211E3B1536009786E3 /* LoginViewController.swift */,
-				65BD270A1E35890B008FDB98 /* ScooperViewController.swift */,
-				65BD270C1E358CC5008FDB98 /* CustomerMenuViewController.swift */,
-				65BD270E1E359463008FDB98 /* TaskListTableViewController.swift */,
-				6584F06A1E3ABA3D00D77837 /* TaskDetailsViewController.swift */,
-				6584F06C1E3AD42E00D77837 /* TaskViewController.swift */,
-				65462F381E3AE2DF0074ECCF /* PaymentViewController.swift */,
-				65462F3A1E3AF25E0074ECCF /* OrderViewController.swift */,
+				65E10CD41E412E7E006EF0B0 /* Customer */,
+				65E10CD31E412E74006EF0B0 /* Driver */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -188,6 +187,67 @@
 				65BD27051E357A46008FDB98 /* LocalHandsMobile-Bridging-Header.h */,
 			);
 			name = Lib;
+			sourceTree = "<group>";
+		};
+		65E10CD31E412E74006EF0B0 /* Driver */ = {
+			isa = PBXGroup;
+			children = (
+				65E10CD11E412CDE006EF0B0 /* DriverOrdersViewController.swift */,
+				65E10CD91E412F3D006EF0B0 /* DriverMenuViewController.swift */,
+				65E10CDB1E4141BF006EF0B0 /* DeliveryViewController.swift */,
+			);
+			name = Driver;
+			sourceTree = "<group>";
+		};
+		65E10CD41E412E7E006EF0B0 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				65BD270E1E359463008FDB98 /* TaskListTableViewController.swift */,
+				6584F06A1E3ABA3D00D77837 /* TaskDetailsViewController.swift */,
+				6584F06C1E3AD42E00D77837 /* TaskViewController.swift */,
+				65462F381E3AE2DF0074ECCF /* PaymentViewController.swift */,
+				65462F3A1E3AF25E0074ECCF /* OrderViewController.swift */,
+				65B77C211E3B1536009786E3 /* LoginViewController.swift */,
+				65BD270A1E35890B008FDB98 /* ScooperViewController.swift */,
+				65BD270C1E358CC5008FDB98 /* CustomerMenuTableViewController.swift */,
+			);
+			name = Customer;
+			sourceTree = "<group>";
+		};
+		65E10CD51E412EB5006EF0B0 /* Driver */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Driver;
+			sourceTree = "<group>";
+		};
+		65E10CD61E412EBF006EF0B0 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				651DB8C61E3C02FB00A8CB44 /* ScooperViewCell.swift */,
+				651DB8CA1E3C2EE700A8CB44 /* TaskViewCell.swift */,
+				651DB8D01E3CE07B00A8CB44 /* CartViewCell.swift */,
+				65AE73731E3F195400A34FEC /* OrderViewCell.swift */,
+			);
+			name = Customer;
+			sourceTree = "<group>";
+		};
+		65E10CD71E412ED2006EF0B0 /* Driver */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Driver;
+			sourceTree = "<group>";
+		};
+		65E10CD81E412ED8006EF0B0 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				65B77C231E3B1DF5009786E3 /* User.swift */,
+				65A2CDDE1E3BC319007A4BC6 /* Scooper.swift */,
+				651DB8C81E3C2DF900A8CB44 /* Task.swift */,
+				651DB8CE1E3CCBB400A8CB44 /* Cart.swift */,
+			);
+			name = Customer;
 			sourceTree = "<group>";
 		};
 		B671D5A86769552AD1ABBAD9 /* Pods */ = {
@@ -330,24 +390,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				65B77C241E3B1DF5009786E3 /* User.swift in Sources */,
+				65AE73741E3F195400A34FEC /* OrderViewCell.swift in Sources */,
 				651DB8CD1E3CB4E400A8CB44 /* Helpers.swift in Sources */,
 				65B77C221E3B1536009786E3 /* LoginViewController.swift in Sources */,
 				6584F06B1E3ABA3D00D77837 /* TaskDetailsViewController.swift in Sources */,
 				65B77C201E3B12B2009786E3 /* FBManager.swift in Sources */,
-				651DB8CF1E3CCBB400A8CB44 /* File.swift in Sources */,
+				651DB8CF1E3CCBB400A8CB44 /* Cart.swift in Sources */,
 				65A2CDDF1E3BC319007A4BC6 /* Scooper.swift in Sources */,
 				65462F3B1E3AF25E0074ECCF /* OrderViewController.swift in Sources */,
+				65E10CDA1E412F3D006EF0B0 /* DriverMenuViewController.swift in Sources */,
 				651DB8C71E3C02FB00A8CB44 /* ScooperViewCell.swift in Sources */,
 				651DB8CB1E3C2EE700A8CB44 /* TaskViewCell.swift in Sources */,
 				65BD270F1E359463008FDB98 /* TaskListTableViewController.swift in Sources */,
+				65E10CD21E412CDE006EF0B0 /* DriverOrdersViewController.swift in Sources */,
 				65BD270B1E35890B008FDB98 /* ScooperViewController.swift in Sources */,
-				65BD270D1E358CC5008FDB98 /* CustomerMenuViewController.swift in Sources */,
+				65BD270D1E358CC5008FDB98 /* CustomerMenuTableViewController.swift in Sources */,
 				6584F06D1E3AD42E00D77837 /* TaskViewController.swift in Sources */,
 				65BD26F41E3569C3008FDB98 /* AppDelegate.swift in Sources */,
 				65B77C2A1E3B3083009786E3 /* APIManager.swift in Sources */,
 				651DB8D11E3CE07B00A8CB44 /* CartViewCell.swift in Sources */,
 				65B77C2C1E3B3235009786E3 /* Constants.swift in Sources */,
 				65462F391E3AE2DF0074ECCF /* PaymentViewController.swift in Sources */,
+				65E10CDC1E4141BF006EF0B0 /* DeliveryViewController.swift in Sources */,
 				651DB8C91E3C2DF900A8CB44 /* Task.swift in Sources */,
 				65BD27081E357A46008FDB98 /* SWRevealViewController.m in Sources */,
 			);

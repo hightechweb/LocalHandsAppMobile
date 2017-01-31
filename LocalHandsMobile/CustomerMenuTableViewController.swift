@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomerMenuViewController: UITableViewController {
+class CustomerMenuTableViewController: UITableViewController {
 
     @IBOutlet weak var imgAvatar: UIImageView!
     @IBOutlet weak var lbName: UILabel!
