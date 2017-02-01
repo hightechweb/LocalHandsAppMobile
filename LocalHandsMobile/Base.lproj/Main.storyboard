@@ -149,7 +149,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DriverOrdersCell" id="mSM-pM-wvN" customClass="DriverOrderCell" customModule="LocalHandsMobile" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="122"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="122"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mSM-pM-wvN" id="hrM-M6-TGE">
                                     <frame key="frameInset" width="375" height="122"/>
@@ -264,6 +264,9 @@
                                 <state key="normal" title="COMPLETE ORDER">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="completeOrder:" destination="q03-LL-2Yy" eventType="touchUpInside" id="QNb-9K-F3Q"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHL-ie-Dd8">
                                 <subviews>
@@ -323,6 +326,7 @@
                         <outlet property="map" destination="f5N-00-s5S" id="D1x-vv-mcI"/>
                         <outlet property="menuBarButton" destination="whq-xA-baR" id="et9-nx-LJr"/>
                         <outlet property="viewInfo" destination="UHL-ie-Dd8" id="mjW-AA-Vsa"/>
+                        <segue destination="2Le-Ja-Zyh" kind="show" identifier="ViewOrders" id="haj-Y7-VHa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zdo-YY-hFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -341,7 +345,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pb0-cQ-8Ok">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pb0-cQ-8Ok" customClass="BarChartView" customModule="Charts">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -358,6 +362,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuBarButton" destination="prk-Km-UBW" id="Afm-iZ-o6j"/>
+                        <outlet property="viewChart" destination="Pb0-cQ-8Ok" id="cOT-ZA-rSd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ro-92-OMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1552,11 +1557,12 @@
         <image name="splash_screen" width="185" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="38g-2g-giP"/>
         <segue reference="SN5-ti-K9M"/>
         <segue reference="GNY-9l-W00"/>
-        <segue reference="G8h-jH-tjV"/>
-        <segue reference="38g-2g-giP"/>
         <segue reference="9aW-1P-ufj"/>
         <segue reference="vDu-FZ-evw"/>
+        <segue reference="G8h-jH-tjV"/>
+        <segue reference="haj-Y7-VHa"/>
     </inferredMetricsTieBreakers>
 </document>

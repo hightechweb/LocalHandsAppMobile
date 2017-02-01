@@ -22,16 +22,19 @@ class OrderViewController: UIViewController {
     
     // customer address
     var destination: MKPlacemark?
+    
     // scooper address
     var source: MKPlacemark?
+    
+    var driverPin: MKPointAnnotation!
+    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if self.revealViewController() != nil {
             menuBarButton.target = self.revealViewController()
-            menuBarButton.action = #selector
-                (SWRevealViewController.revealToggle(_:))
+            menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
@@ -46,32 +49,100 @@ class OrderViewController: UIViewController {
             
             let order = json["order"]
             
-            if let orderDetails = order["order_details"].array {
+            if order["status"] != nil {
                 
-                self.lbStatus.text = order["status"].string!.uppercased()
-                self.cart = orderDetails
-                self.tbvTasks.reloadData()
-            }
-            
-            let from = order["scooper"]["address"].string!
-            let to = order["address"].string!
-            
-            // Map pin overlay labels
-            self.getLocation(from, "Handler", { (src) in
-                self.source = src
+                // show order
+                if let orderDetails = order["order_details"].array {
+                    
+                    self.lbStatus.text = order["status"].string!.uppercased()
+                    self.cart = orderDetails
+                    self.tbvTasks.reloadData()
+                }
                 
-                self.getLocation(to, "Customer", { (des) in
-                    self.destination = des
-                    self.getDirections()
+                let from = order["scooper"]["address"].string!
+                let to = order["address"].string!
+                
+                // Map pin overlay labels
+                self.getLocation(from, "RES", { (src) in
+                    self.source = src
+                    
+                    self.getLocation(to, "CUS", { (des) in
+                        self.destination = des
+                        self.getDirections()
+                    })
                 })
-            })
+                
+                if order["status"] != "Delivered" {
+                    self.setTimer()
+                }
+            } // else {
+                // show no order message and hide UI controls
+            // }
         }
     }
+    
+    func setTimer() {
+        timer = Timer.scheduledTimer(
+            timeInterval: 5,
+            target: self,
+            selector: #selector(getDriverLocation(_:)),
+            userInfo: nil, repeats: true)
+    }
+    
+    func getDriverLocation(_ sender: AnyObject) {
+        APIManager.shared.getDriverLocation { (json) in
+            
+            if let location = json["location"].string {
+                
+                self.lbStatus.text = "ON THE WAY"
+                
+                let split = location.components(separatedBy: ",")
+                let lat = split[0]
+                let lng = split[1]
+                
+                let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat)!, longitude: CLLocationDegrees(lng)!)
+                
+                // Create pin annotation for Driver
+                if self.driverPin != nil {
+                    self.driverPin.coordinate = coordinate
+                } else {
+                    self.driverPin = MKPointAnnotation()
+                    self.driverPin.coordinate = coordinate
+                    self.driverPin.title = "DRI"
+                    self.map.addAnnotation(self.driverPin)
+                }
+                
+                // Reset zoom rect to cover 3 locations
+                self.autoZoom()
+                
+            } else {
+                self.timer.invalidate()
+            }
+        }
+    }
+    
+    func autoZoom() {
+        
+        var zoomRect = MKMapRectNull
+        for annotation in self.map.annotations {
+            let annotationPoint = MKMapPointForCoordinate(annotation.coordinate)
+            let pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.1, 0.1)
+            zoomRect = MKMapRectUnion(zoomRect, pointRect)
+        }
+        
+        let insetWidth = -zoomRect.size.width * 0.2
+        let insetHeight = -zoomRect.size.height * 0.2
+        let insetRect = MKMapRectInset(zoomRect, insetWidth, insetHeight)
+        
+        self.map.setVisibleMapRect(insetRect, animated: true)
+    }
+    
 }
 
 extension OrderViewController: MKMapViewDelegate {
     
-    // #1 - Delegate mthod of MKMapViewDelegate
+    // #1 - Delegate method of MKMapViewDelegate
+    
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         
         let renderer = MKPolylineRenderer(overlay: overlay)
@@ -81,10 +152,9 @@ extension OrderViewController: MKMapViewDelegate {
         return renderer
     }
     
-    // #2 - Convert an address string to location on the map
+    // #2 - Convert an address string to a location on the map
     func getLocation(_ address: String,_ title: String,_ completionHandler: @escaping (MKPlacemark) -> Void) {
         
-
         let geocoder = CLGeocoder()
         
         geocoder.geocodeAddressString(address) { (placemarks, error) in
@@ -97,7 +167,7 @@ extension OrderViewController: MKMapViewDelegate {
                 
                 let coordinates: CLLocationCoordinate2D = placemark.location!.coordinate
                 
-                // Create map pin
+                // Create a pin
                 let dropPin = MKPointAnnotation()
                 dropPin.coordinate = coordinates
                 dropPin.title = title
@@ -122,33 +192,54 @@ extension OrderViewController: MKMapViewDelegate {
             if error != nil {
                 print("Error: ", error)
             } else {
-                // show route
+                // Show route
                 self.showRoute(response: response!)
             }
-            
         }
+        
     }
     
-    // #4 - Show route between location and make visible zoom
+    // #4 - Show route between locations and make a visible zoom
     func showRoute(response: MKDirectionsResponse) {
         
         for route in response.routes {
             self.map.add(route.polyline, level: MKOverlayLevel.aboveRoads)
         }
+    }
+    
+    // #5 - Customize map pin's with Images
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        var zoomRect = MKMapRectNull
-        for annotation in self.map.annotations {
-            let annotationPoint = MKMapPointForCoordinate(annotation.coordinate)
-            let pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.1, 0.1)
-            zoomRect = MKMapRectUnion(zoomRect, pointRect)
+        let annotationIdentifier = "Me"
+        
+        var annotationView: MKAnnotationView?
+        if let dequeueAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier) {
+            
+            annotationView = dequeueAnnotationView
+            annotationView?.annotation = annotation
+        } else {
+            
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
         }
         
-        let insetWidth = -zoomRect.size.width * 0.2
-        let insetHeight = -zoomRect.size.height * 0.2
-        let insetRect = MKMapRectInset(zoomRect, insetWidth, insetHeight)
+        if let annotationView = annotationView, let name = annotation.title! {
+            switch name {
+            case "DRI":
+                annotationView.canShowCallout = true
+                annotationView.image = UIImage(named: "pin_car")
+            case "RES":
+                annotationView.canShowCallout = true
+                annotationView.image = UIImage(named: "pin_restaurant")
+            case "CUS":
+                annotationView.canShowCallout = true
+                annotationView.image = UIImage(named: "pin_customer")
+            default:
+                annotationView.canShowCallout = true
+                annotationView.image = UIImage(named: "pin_car")
+            }
+        }
         
-        self.map.setVisibleMapRect(insetRect, animated: true)
-        
+        return annotationView
     }
     
 }

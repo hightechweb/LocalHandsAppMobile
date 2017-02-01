@@ -55,7 +55,7 @@ class DeliveryViewController: UIViewController {
         
         // Running updating location process
         timer = Timer.scheduledTimer(
-            timeInterval: 1,
+            timeInterval: 3,
             target: self,
             selector: #selector(updateLocation(_:)),
             userInfo: nil,
@@ -76,7 +76,7 @@ class DeliveryViewController: UIViewController {
     
     func loadData() {
         
-        Helpers.showActivityIndicator(activityIndicator, self.view)
+        //Helpers.showActivityIndicator(activityIndicator, self.view)
         
         APIManager.shared.getCurrentDriverOrder { (json) in
             //print(json)
@@ -104,16 +104,16 @@ class DeliveryViewController: UIViewController {
                 self.imgCustomerAvatar.clipsToBounds = true
                 
                 // Map pin overlay labels
-                self.getLocation(from, "Customer", { (src) in
+                self.getLocation(from, "CUS", { (src) in
                     self.source = src
                     
-                    self.getLocation(to, "Handler", { (des) in
+                    self.getLocation(to, "DRI", { (des) in
                         self.destination = des
                         // show blue line direction between endpoints
                         // self.getDirections()
                     })
                 })
-                Helpers.hideActivityIndicator(self.activityIndicator)
+                // Helpers.hideActivityIndicator(self.activityIndicator)
                 
             } else {
                 self.map.isHidden = true
@@ -127,13 +127,39 @@ class DeliveryViewController: UIViewController {
                 lbMessage.text = "No orders for delivery."
                 
                 self.view.addSubview(lbMessage)
-                Helpers.hideActivityIndicator(self.activityIndicator)
+                // Helpers.hideActivityIndicator(self.activityIndicator)
             }
             
             // self.tableView.reloadData()
             
         }
     }
+    
+    @IBAction func completeOrder(_ sender: AnyObject) {
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            
+            APIManager.shared.compeleteOrder(orderId: self.orderId!, completionHandler: { (json) in
+                if json != nil {
+                    // Stop updating driver location
+                    self.timer.invalidate()
+                    self.locationManager.stopUpdatingLocation()
+                    
+                    // Redirect driver to Ready Order View
+                    self.performSegue(withIdentifier: "ViewOrders", sender: self)
+                }
+            })
+        }
+        
+        let alertView = UIAlertController(title: "Complete Order", message: "Are you sure?", preferredStyle: .alert)
+        alertView.addAction(cancelAction)
+        alertView.addAction(okAction)
+        
+        self.present(alertView, animated: true, completion: nil)
+    }
+    
+    
 }
 
 
