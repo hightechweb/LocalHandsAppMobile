@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 import FBSDKLoginKit
+import MapKit
 
 class APIManager {
     
@@ -139,6 +140,9 @@ class APIManager {
         
     }
     
+    
+    /////***** CUSTOMER ******////
+    
     // API - Get scooper list
     func getScoopers(completionHandler: @escaping (JSON) -> Void) {
         
@@ -200,5 +204,42 @@ class APIManager {
         requestServer(.get, path, params, URLEncoding(), completionHandler)
     }
     
-
+    /////***** DRIVER (SCOOPER / HANDLER) ******////
+    
+    // API - Get list of orders that are ready for delivery
+    func getDriverOrders(completionHandler: @escaping (JSON) -> Void) {
+        let path = "api/driver/orders/ready/"
+        requestServer(.get, path, nil, URLEncoding(), completionHandler)
+    }
+    
+    // API - Picking up a ready order
+    func pickOrder(orderId: Int, completionHandler: @escaping (JSON) -> Void) {
+        let path = "api/driver/order/pick/"
+        let params: [String: Any] = [
+            "order_id": "\(orderId)",
+            "access_token": self.accessToken
+        ]
+        requestServer(.post, path, params, URLEncoding(), completionHandler)
+    }
+    
+    // API - Get current drivers location
+    func getCurrentDriverOrder(completionHandler: @escaping (JSON) -> Void) {
+        let path = "api/driver/order/latest/"
+        let params: [String: Any] = [
+            "access_token": self.accessToken
+        ]
+        requestServer(.get, path, params, URLEncoding(), completionHandler)
+    }
+    
+    // API - Update driver's location
+    func updateLocation(location: CLLocationCoordinate2D, completionHandler: @escaping (JSON) -> Void) {
+        let path = "api/driver/location/update/"
+        let params: [String: Any] = [
+            "access_token": self.accessToken,
+            "location": "\(location.latitude), \(location.longitude)"
+        ]
+        requestServer(.post, path, params, URLEncoding(), completionHandler)
+    }
+    
+    
 }

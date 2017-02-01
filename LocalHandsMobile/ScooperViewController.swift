@@ -25,8 +25,7 @@ class ScooperViewController: UIViewController {
 
         if self.revealViewController() != nil {
             menuBarButton.target = self.revealViewController()
-            menuBarButton.action = #selector
-                (SWRevealViewController.revealToggle(_:))
+            menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
