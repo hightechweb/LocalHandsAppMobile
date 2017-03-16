@@ -143,6 +143,14 @@ class APIManager {
     
     /////***** CUSTOMER ******////
     
+    
+    // API - Get needs list - NEW DT
+    func getNeeds(completionHandler: @escaping (JSON) -> Void) {
+        
+        let path = "api/customer/needs/"
+        requestServer(.get, path, nil, URLEncoding(), completionHandler)
+    }
+    
     // API - Get scooper list
     func getScoopers(completionHandler: @escaping (JSON) -> Void) {
         
@@ -200,7 +208,6 @@ class APIManager {
         let params: [String: Any] = [
             "access_token": self.accessToken
         ]
-        
         requestServer(.get, path, params, URLEncoding(), completionHandler)
     }
     

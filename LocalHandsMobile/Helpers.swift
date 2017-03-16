@@ -11,7 +11,6 @@ import Foundation
 class Helpers {
     
     // Helper method to load image asynch
-    
     static func loadImage(_ imageView: UIImageView,_ urlString: String) {
         let imgURL: URL = URL(string: urlString)!
         

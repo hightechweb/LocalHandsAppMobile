@@ -29,15 +29,13 @@ class TaskViewController: UIViewController {
 
         if self.revealViewController() != nil {
             menuBarButton.target = self.revealViewController()
-            menuBarButton.action = #selector
-                (SWRevealViewController.revealToggle(_:))
+            menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             
         }
         
         if Cart.currentCart.items.count == 0 {
             // Show message here
-            
             let lbEmptyCart = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 40))
             lbEmptyCart.center = self.view.center
             lbEmptyCart.textAlignment = NSTextAlignment.center

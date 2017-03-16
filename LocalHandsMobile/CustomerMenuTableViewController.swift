@@ -24,7 +24,7 @@ class CustomerMenuTableViewController: UITableViewController {
         imgAvatar.layer.borderColor = UIColor.white.cgColor
         imgAvatar.clipsToBounds = true
         
-        view.backgroundColor = UIColor(red:0.00, green:0.00, blue:0.00, alpha:1.0)
+        view.backgroundColor = UIColor(red:0.18, green:0.18, blue:0.18, alpha:1.0)
 
     }
     

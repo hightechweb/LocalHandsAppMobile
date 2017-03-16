@@ -33,6 +33,10 @@
 		65BD270B1E35890B008FDB98 /* ScooperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD270A1E35890B008FDB98 /* ScooperViewController.swift */; };
 		65BD270D1E358CC5008FDB98 /* CustomerMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD270C1E358CC5008FDB98 /* CustomerMenuTableViewController.swift */; };
 		65BD270F1E359463008FDB98 /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD270E1E359463008FDB98 /* TaskListTableViewController.swift */; };
+		65C289091E4AD7600008AC2B /* NeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C289081E4AD7600008AC2B /* NeedViewController.swift */; };
+		65C2890B1E4AD9EB0008AC2B /* NeedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C2890A1E4AD9EB0008AC2B /* NeedViewCell.swift */; };
+		65C2890D1E4ADA380008AC2B /* Need.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C2890C1E4ADA380008AC2B /* Need.swift */; };
+		65C2890F1E4AF4B80008AC2B /* NeedListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C2890E1E4AF4B80008AC2B /* NeedListTableViewController.swift */; };
 		65D3D8311E3DBE7F000D6918 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D3D8301E3DBE7F000D6918 /* CoreLocation.framework */; };
 		65E10CD21E412CDE006EF0B0 /* DriverOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E10CD11E412CDE006EF0B0 /* DriverOrdersViewController.swift */; };
 		65E10CDA1E412F3D006EF0B0 /* DriverMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E10CD91E412F3D006EF0B0 /* DriverMenuViewController.swift */; };
@@ -76,6 +80,10 @@
 		65BD270A1E35890B008FDB98 /* ScooperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScooperViewController.swift; sourceTree = "<group>"; };
 		65BD270C1E358CC5008FDB98 /* CustomerMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerMenuTableViewController.swift; sourceTree = "<group>"; };
 		65BD270E1E359463008FDB98 /* TaskListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
+		65C289081E4AD7600008AC2B /* NeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedViewController.swift; sourceTree = "<group>"; };
+		65C2890A1E4AD9EB0008AC2B /* NeedViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedViewCell.swift; sourceTree = "<group>"; };
+		65C2890C1E4ADA380008AC2B /* Need.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Need.swift; sourceTree = "<group>"; };
+		65C2890E1E4AF4B80008AC2B /* NeedListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedListTableViewController.swift; sourceTree = "<group>"; };
 		65D3D8301E3DBE7F000D6918 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		65E10CD11E412CDE006EF0B0 /* DriverOrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverOrdersViewController.swift; sourceTree = "<group>"; };
 		65E10CD91E412F3D006EF0B0 /* DriverMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverMenuViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +225,8 @@
 				65B77C211E3B1536009786E3 /* LoginViewController.swift */,
 				65BD270A1E35890B008FDB98 /* ScooperViewController.swift */,
 				65BD270C1E358CC5008FDB98 /* CustomerMenuTableViewController.swift */,
+				65C289081E4AD7600008AC2B /* NeedViewController.swift */,
+				65C2890E1E4AF4B80008AC2B /* NeedListTableViewController.swift */,
 			);
 			name = Customer;
 			sourceTree = "<group>";
@@ -236,6 +246,7 @@
 				651DB8CA1E3C2EE700A8CB44 /* TaskViewCell.swift */,
 				651DB8D01E3CE07B00A8CB44 /* CartViewCell.swift */,
 				65AE73731E3F195400A34FEC /* OrderViewCell.swift */,
+				65C2890A1E4AD9EB0008AC2B /* NeedViewCell.swift */,
 			);
 			name = Customer;
 			sourceTree = "<group>";
@@ -255,6 +266,7 @@
 				65A2CDDE1E3BC319007A4BC6 /* Scooper.swift */,
 				651DB8C81E3C2DF900A8CB44 /* Task.swift */,
 				651DB8CE1E3CCBB400A8CB44 /* Cart.swift */,
+				65C2890C1E4ADA380008AC2B /* Need.swift */,
 			);
 			name = Customer;
 			sourceTree = "<group>";
@@ -404,15 +416,18 @@
 				651DB8CD1E3CB4E400A8CB44 /* Helpers.swift in Sources */,
 				65B77C221E3B1536009786E3 /* LoginViewController.swift in Sources */,
 				6584F06B1E3ABA3D00D77837 /* TaskDetailsViewController.swift in Sources */,
+				65C2890B1E4AD9EB0008AC2B /* NeedViewCell.swift in Sources */,
 				65B77C201E3B12B2009786E3 /* FBManager.swift in Sources */,
 				651DB8CF1E3CCBB400A8CB44 /* Cart.swift in Sources */,
 				65A2CDDF1E3BC319007A4BC6 /* Scooper.swift in Sources */,
 				65462F3B1E3AF25E0074ECCF /* OrderViewController.swift in Sources */,
+				65C2890D1E4ADA380008AC2B /* Need.swift in Sources */,
 				65E10CDA1E412F3D006EF0B0 /* DriverMenuViewController.swift in Sources */,
 				651DB8C71E3C02FB00A8CB44 /* ScooperViewCell.swift in Sources */,
 				651DB8CB1E3C2EE700A8CB44 /* TaskViewCell.swift in Sources */,
 				65BD270F1E359463008FDB98 /* TaskListTableViewController.swift in Sources */,
 				65E10CD21E412CDE006EF0B0 /* DriverOrdersViewController.swift in Sources */,
+				65C2890F1E4AF4B80008AC2B /* NeedListTableViewController.swift in Sources */,
 				65E10CDE1E4146B0006EF0B0 /* ReportViewController.swift in Sources */,
 				65BD270B1E35890B008FDB98 /* ScooperViewController.swift in Sources */,
 				65BD270D1E358CC5008FDB98 /* CustomerMenuTableViewController.swift in Sources */,
@@ -421,6 +436,7 @@
 				65B77C2A1E3B3083009786E3 /* APIManager.swift in Sources */,
 				651DB8D11E3CE07B00A8CB44 /* CartViewCell.swift in Sources */,
 				65B77C2C1E3B3235009786E3 /* Constants.swift in Sources */,
+				65C289091E4AD7600008AC2B /* NeedViewController.swift in Sources */,
 				65462F391E3AE2DF0074ECCF /* PaymentViewController.swift in Sources */,
 				65E10CDC1E4141BF006EF0B0 /* DeliveryViewController.swift in Sources */,
 				651DB8C91E3C2DF900A8CB44 /* Task.swift in Sources */,

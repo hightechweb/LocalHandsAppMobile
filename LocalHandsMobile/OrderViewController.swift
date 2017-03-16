@@ -26,11 +26,18 @@ class OrderViewController: UIViewController {
     // scooper address
     var source: MKPlacemark?
     
+    // driver pin and timer to update
     var driverPin: MKPointAnnotation!
     var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // START C - Hide all of the UI controllers - new dt
+        self.tbvTasks.isHidden = true
+        self.map.isHidden = true
+        self.lbStatus.isHidden = true
+        // END
         
         if self.revealViewController() != nil {
             menuBarButton.target = self.revealViewController()
@@ -41,6 +48,7 @@ class OrderViewController: UIViewController {
         getLatestOrder()
     }
     
+    // GET THE MOST RECENT (LAST ORDER FOR CUSTOMER)
     func getLatestOrder() {
         
         APIManager.shared.getLatestOrder { (json) in
@@ -49,7 +57,14 @@ class OrderViewController: UIViewController {
             
             let order = json["order"]
             
-            if order["status"] != nil {
+            // if order["status"] != nil { // ORIG
+            if (order["status"] == "On the way" || order["status"] == "Delivered") {
+                
+                // START CHALLENGE - show all of the UI controllers
+                self.tbvTasks.isHidden = false
+                self.map.isHidden = false
+                self.lbStatus.isHidden = false
+                // END
                 
                 // show order
                 if let orderDetails = order["order_details"].array {
@@ -75,9 +90,16 @@ class OrderViewController: UIViewController {
                 if order["status"] != "Delivered" {
                     self.setTimer()
                 }
-            } // else {
-                // show no order message and hide UI controls
-            // }
+            } else {
+                // START CHALLENGE - show no order message and hide UI controls - NEW CHALLENGE #1
+                let lbEmptyOrder = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 40))
+                lbEmptyOrder.center = self.view.center
+                lbEmptyOrder.textAlignment = NSTextAlignment.center
+                lbEmptyOrder.text = "No Active Orders!"
+            
+                self.view.addSubview(lbEmptyOrder)
+                // END CHALLENGE
+             }
         }
     }
     
@@ -122,7 +144,6 @@ class OrderViewController: UIViewController {
     }
     
     func autoZoom() {
-        
         var zoomRect = MKMapRectNull
         for annotation in self.map.annotations {
             let annotationPoint = MKMapPointForCoordinate(annotation.coordinate)
@@ -142,7 +163,6 @@ class OrderViewController: UIViewController {
 extension OrderViewController: MKMapViewDelegate {
     
     // #1 - Delegate method of MKMapViewDelegate
-    
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         
         let renderer = MKPolylineRenderer(overlay: overlay)
@@ -260,7 +280,14 @@ extension OrderViewController: UITableViewDelegate, UITableViewDataSource {
         let item = cart[indexPath.row]
         cell.lbQty.text = String(item["quantity"].int!)
         cell.lbTaskName.text = item["task"]["name"].string
-        cell.lbSubTotal.text = "$\(String(item["sub_total"].float!))"
+        
+        // ORIG => (0.0)
+        //cell.lbSubTotal.text = "$\(String(item["sub_total"].float!))"
+        
+        // NEW - float with 2 decimal places for currency (0.00)
+        let value = item["sub_total"].float!
+        cell.lbSubTotal.text = "$\(String(format:"%.2f", value))"
+        // END
         
         return cell
     }
